@@ -24,7 +24,7 @@ fn test_should_work_with_max() {
     let contract_id = env.register_contract(None, IncrementContract);
     let client = IncrementContractClient::new(&env, &contract_id);
 
-    let max_value: u32 = u32::MAX;
+    let max_value: i128 = i128::MAX;
     assert_eq!(client.increment(&max_value), max_value);
 }
 
@@ -37,7 +37,7 @@ fn should_panic_overflow() {
 
     
     assert_eq!(client.increment(&1), 1);
-    let max_value: u32 = u32::MAX;
+    let max_value: i128 = i128::MAX;
     client.increment(&max_value);
     
     
@@ -52,6 +52,6 @@ fn should_panic_underflow() {
 
     
     assert_eq!(client.increment(&1), 1);
-    let max_value: u32 = u32::MAX;
+    let max_value: i128 = i128::MAX;
     assert_eq!(client.decrement(&2), max_value);
 }
