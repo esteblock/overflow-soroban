@@ -126,6 +126,47 @@ impl IncrementContract {
         // Return the count to the caller.
         count
     }
+
+    /// Div devides an internal counter, and returns the value.
+    pub fn div(env: Env, n: i128) -> i128 {
+        // Get the current count.
+        let mut count: i128 = env
+            .storage()
+            .get(&COUNTER)
+            .unwrap_or(Ok(0)) // If no value set, assume 0.
+            .unwrap(); // Panic if the value of COUNTER is not i128.
+        log!(&env, "count: {}", count);
+
+        // divide the count.
+        count = count/n;
+
+        // Save the count.
+        env.storage().set(&COUNTER, &count);
+
+        // Return the count to the caller.
+        count
+    }
+
+
+    /// Div devides an internal counter, and returns the value.
+    pub fn checked_div(env: Env, n: i128) -> i128 {
+        // Get the current count.
+        let mut count: i128 = env
+            .storage()
+            .get(&COUNTER)
+            .unwrap_or(Ok(0)) // If no value set, assume 0.
+            .unwrap(); // Panic if the value of COUNTER is not i128.
+        log!(&env, "count: {}", count);
+
+        // divide the count.
+        count = count.checked_div(n).unwrap();
+
+        // Save the count.
+        env.storage().set(&COUNTER, &count);
+
+        // Return the count to the caller.
+        count
+    }
 }
 
 mod test;
