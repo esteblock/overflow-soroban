@@ -19,6 +19,10 @@ fn test() {
     assert_eq!(client.mul(&2), 4);
     assert_eq!(client.checked_mul(&2), 8);
     assert_eq!(client.checked_increment(&1), 9);
+    assert_eq!(client.checked_decrement(&1), 8);
+
+    // As we have i128, we can have negative numbers
+    assert_eq!(client.checked_decrement(&10), -2);
 }
 
 #[test]
