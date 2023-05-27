@@ -12,7 +12,7 @@ Here we test:
 overflow-checks = true
 ```
 
-And `.checked_add()`, `+`, `-`, `checked_sub`, `/`, `.checked_div`
+And `.checked_add()`, `+`, `-`, `checked_sub`, `/`, `.checked_div`, `*` and `.checked_mul`
 
 1.- Read the code
 
