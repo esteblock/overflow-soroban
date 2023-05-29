@@ -8,13 +8,13 @@ pub struct IncrementContract;
 #[contractimpl]
 impl IncrementContract {
     /// Increment increments an internal counter, and returns the value.
-    pub fn increment(env: Env, n: i128) -> i128 {
+    pub fn increment(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // Increment the count.
@@ -28,13 +28,13 @@ impl IncrementContract {
     }
 
     /// Increment increments an internal counter, and returns the value.
-    pub fn checked_increment(env: Env, n: i128) -> i128 {
+    pub fn checked_increment(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // Increment the count.
@@ -48,13 +48,13 @@ impl IncrementContract {
     }
 
     /// Decrement decrements an internal counter, and returns the value.
-    pub fn decrement(env: Env, n: i128) -> i128 {
+    pub fn decrement(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // Decrement the count.
@@ -68,13 +68,13 @@ impl IncrementContract {
     }
 
     /// Decrement decrements an internal counter, and returns the value.
-    pub fn checked_decrement(env: Env, n: i128) -> i128 {
+    pub fn checked_decrement(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // Decrement the count.
@@ -88,13 +88,13 @@ impl IncrementContract {
     }
 
     /// Mul multiplies an internal counter, and returns the value.
-    pub fn mul(env: Env, n: i128) -> i128 {
+    pub fn mul(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // Decrement the count.
@@ -108,13 +108,13 @@ impl IncrementContract {
     }
 
     /// Mul multiplies with CHECKED_MUL
-    pub fn checked_mul(env: Env, n: i128) -> i128 {
+    pub fn checked_mul(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // Decrement the count.
@@ -128,13 +128,13 @@ impl IncrementContract {
     }
 
     /// Div devides an internal counter, and returns the value.
-    pub fn div(env: Env, n: i128) -> i128 {
+    pub fn div(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // divide the count.
@@ -149,13 +149,13 @@ impl IncrementContract {
 
 
     /// Div devides an internal counter, and returns the value.
-    pub fn checked_div(env: Env, n: i128) -> i128 {
+    pub fn checked_div(env: Env, n: u128) -> u128 {
         // Get the current count.
-        let mut count: i128 = env
+        let mut count: u128 = env
             .storage()
             .get(&COUNTER)
             .unwrap_or(Ok(0)) // If no value set, assume 0.
-            .unwrap(); // Panic if the value of COUNTER is not i128.
+            .unwrap(); // Panic if the value of COUNTER is not u128.
         log!(&env, "count: {}", count);
 
         // divide the count.
