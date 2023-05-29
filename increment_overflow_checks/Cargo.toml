@@ -26,6 +26,9 @@ panic = "abort"
 codegen-units = 1
 lto = true
 
+[profile.dev]
+overflow-checks = true
+
 [profile.release-with-logs]
 inherits = "release"
 debug-assertions = true
